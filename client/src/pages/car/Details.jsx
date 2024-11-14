@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import api from "../../services/api";
-import styles from "../../../styles/CarDetails.module.css";
+import styles from "../../../styles/Car-Details.module.css";
+
 
 const CarDetails = () => {
   const { carId } = useParams();

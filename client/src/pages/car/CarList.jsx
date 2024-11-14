@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import api from "../../services/api";
 import { useNavigate } from "react-router-dom";
-import styles from "../../../styles/CarList.module.css";
+import styles from "../../../styles/Car-List.module.css";
+
 import CarCard from "../../components/CarCard";
 
 const CarList = () => {
