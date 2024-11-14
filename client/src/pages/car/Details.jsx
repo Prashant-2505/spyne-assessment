@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import api from "../../services/api";
-import styles from "../../styles/CarDetails.module.css";
+import styles from "../../../src/styles/CarDetails.module.css";
 
 const CarDetails = () => {
   const { carId } = useParams();
@@ -150,7 +150,7 @@ const CarDetails = () => {
         previewImages.length > 0 ? (
           <div className={styles.imageWrapper}>
             <img
-              src={`http://localhost:8080/${(
+              src={`https://spyne-assessment.onrender.com/${(
                 (existingImages && existingImages[currentImage]) ||
                 previewImages[currentImage]
               ).replace(/\\/g, "/")}`}
@@ -162,7 +162,7 @@ const CarDetails = () => {
                 [...existingImages, ...previewImages].map((image, index) => (
                   <img
                     key={index}
-                    src={`http://localhost:8080/${image.replace(/\\/g, "/")}`}
+                    src={`https://spyne-assessment.onrender.com/${image.replace(/\\/g, "/")}`}
                     alt={`Car ${car.title} thumbnail ${index + 1}`}
                     className={styles.thumbnail}
                     onClick={() => setCurrentImage(index)}
@@ -240,7 +240,7 @@ const CarDetails = () => {
                   {existingImages.map((image, index) => (
                     <div key={index} className={styles.imageItem}>
                       <img
-                        src={`http://localhost:8080/${image.replace(
+                        src={`https://spyne-assessment.onrender.com/${image.replace(
                           /\\/g,
                           "/"
                         )}`}

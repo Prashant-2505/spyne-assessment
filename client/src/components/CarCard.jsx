@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../styles/CarCard.module.css";
+import styles from "../../src/styles/CarCard.module.css";
 
 const CarCard = ({ car, onCarClick }) => {
   return (
@@ -7,7 +7,7 @@ const CarCard = ({ car, onCarClick }) => {
       <div className={styles.imagesContainer}>
         {car?.images && car.images.length > 0 ? (
           <img
-            src={`http://localhost:8080/${car.images[0].replace(/\\/g, "/")}`}
+            src={`https://spyne-assessment.onrender.com/${car.images[0].replace(/\\/g, "/")}`}
             alt={`Car ${car.title} image`}
             className={styles.image}
           />

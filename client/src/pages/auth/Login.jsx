@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import api from '../../services/api';
 import { useNavigate } from 'react-router-dom';
-import styles from '../../styles/login.module.css';
+import styles from '../../../src/styles/Login.module.css';
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
@@ -45,6 +45,7 @@ const Login = () => {
           required
         />
         <button type="submit" className={styles.button}>Login</button>
+        <p>Not registered <span onClick={()=>navigate('/auth/register')}>Register</span></p>
       </form>
     </div>
   );

@@ -62,7 +62,14 @@
   .button:hover {
     background-color: #45a049;
   }
-  
+  p 
+  {
+    span {
+      margin-left: 2rem;
+      color : red;
+      cursor: pointer;
+    }
+  }
   /* Responsive design */
   @media (max-width: 600px) {
     .title {
