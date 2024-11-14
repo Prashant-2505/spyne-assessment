@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "server":"nodemon index.js",
-    "build": "npm install --prefix ./server && npm install --prefix ./server/client && npm run build --prefix ./server/client"
+    "build": "npm install "
   
   },
   "author": "",

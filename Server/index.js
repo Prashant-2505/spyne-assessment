@@ -64,23 +64,6 @@ app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 
 
-// Deployment configuration
-const __dirname1 = path.resolve();
-
-if (process.env.NODE_ENV === 'production') {
-  // Serve static files from the 'dist' directory
-  app.use(express.static(path.join(__dirname1, 'client', 'dist')));
-
-  // Handle all other routes by serving the index.html
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname1, 'client', 'dist', 'index.html'));
-  });
-} else {
-  app.get('/', (req, res) => {
-    res.json('API is running');
-  });
-}
-
 
 
 // Start the server
