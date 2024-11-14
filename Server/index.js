@@ -41,7 +41,7 @@ const swaggerDocs = swaggerJsdoc(swaggerOptions);
 // Middleware
 app.use(express.json());
 
-const clientURL = process.env.CLIENT_URL || 'http://localhost:5173';
+const clientURL = 'https://spyne-assessment.vercel.app';
 
 // Apply CORS middleware conditionally
 app.use(
