@@ -41,7 +41,7 @@ const swaggerDocs = swaggerJsdoc(swaggerOptions);
 // Middleware
 app.use(express.json());
 
-const clientURL = 'https://spyne-assessment-3.onrender.com';
+const clientURL = ['https://spyne-assessment-3.onrender.com','https://spyne-assessment.vercel.app/'];
 
 // Apply CORS middleware conditionally
 app.use(
