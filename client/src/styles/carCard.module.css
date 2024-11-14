@@ -1,0 +1,68 @@
+/* carCard.module.css */
+
+.carCard {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+
+  }
+  
+  .carCard:hover {
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  .carTitle {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #444;
+  }
+  
+  .description {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  .tag
+  {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+
+    li {
+       background-color: slategray;
+       color: white;
+       padding: 0.2rem 0.5rem;
+       border-radius: 10px;
+    }
+  }
+  
+  .imagesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    overflow-x: auto;
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .image:hover {
+    transform: scale(1.05);
+  }
+  
+  .noImages {
+    font-size: 0.9em;
+    color: #999;
+  }
+  
