@@ -22,53 +22,34 @@ const registerUser = async (req, res) => {
 };
 
 // Login user
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
-const User = require('../models/User'); // Adjust the path to your User model
-
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
   
-  try {
-    // Check if user exists
-    const user = await User.findOne({ email });
-    if (!user) {
-      return res.status(400).json({ message: 'Invalid email or password' });
-    }
-
-    // Compare passwords
-    const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) {
-      return res.status(400).json({ message: 'Invalid email or password' });
-    }
-
-    // Generate JWT token
-    const token = jwt.sign(
-      { id: user._id },
-      process.env.JWT_SECRET, 
-      { expiresIn: '24h' }
-    );
-
-    res.cookie('__vercel_live_token', token, {
-      httpOnly: true,      
-      secure: process.env.NODE_ENV === 'production', 
-      sameSite: 'None',   
-      maxAge: 24 * 60 * 60 * 1000, // 24 hours
-    });
-
-    return res.json({
-      user: {
-        id: user._id,
-        email: user.email,
-        username: user.username,
-      },
-      token, 
-    });
-
-  } catch (err) {
-    console.error('Error logging in:', err);
-    return res.status(500).json({ message: 'Internal server error' });
+  const user = await User.findOne({ email });
+  
+  // Check if user exists
+  if (!user) {
+    return res.status(400).json({ message: 'Invalid email or password' });
   }
+
+  // Compare passwords
+  const isMatch = await bcrypt.compare(password, user.password);
+  
+  if (!isMatch) {
+    return res.status(400).json({ message: 'Invalid email or password' });
+  }
+
+  // Generate JWT token
+  const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '24h' });
+
+  res.json({ 
+    user: {
+      id: user._id,
+      email: user.email,
+      username: user.username
+    },
+    token 
+  });
 };
 
 
