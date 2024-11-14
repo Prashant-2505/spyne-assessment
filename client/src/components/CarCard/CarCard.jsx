@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../src/styles/CarCard.module.css";
+import styles from "./CarCard.module.css";
 
 const CarCard = ({ car, onCarClick }) => {
   return (

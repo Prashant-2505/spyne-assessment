@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import api from "../../services/api";
 import { useNavigate } from "react-router-dom";
-import styles from "../../../src/styles/CarCreate.module.css";
+import styles from "./styles/CarCreate.module.css";
 
 const CarCreate = () => {
   const [formData, setFormData] = useState({
